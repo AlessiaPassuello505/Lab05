@@ -21,11 +21,17 @@ class View(ft.UserControl):
     def load_interface(self):
         """Function that loads the graphical elements of the view"""
         # title
-        self._title = ft.Text("Hello World", color="blue", size=24)
+        self._title = ft.Text("App Gestione Studenti", color="blue", size=24)
         self._page.controls.append(self._title)
 
         #ROW with some controls
         # text field for the name
+
+        self.dd_corsi=ft.Dropdown(
+            label="Corso", hint_text="Selezionare un corso", options=[]
+        )
+
+        self.
         self.txt_name = ft.TextField(
             label="name",
             width=200,
