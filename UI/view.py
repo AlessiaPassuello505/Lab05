@@ -1,7 +1,5 @@
 import flet as ft
-
 from model import corso
-
 
 class View(ft.UserControl):
     def __init__(self, page: ft.Page):
@@ -27,7 +25,6 @@ class View(ft.UserControl):
         self.btn_iscriviStudente=None
 
 
-
     def load_interface(self):
         """Function that loads the graphical elements of the view"""
         # title
@@ -51,7 +48,7 @@ class View(ft.UserControl):
 
 
         # button
-        self.btn_cercaIscritti = ft.ElevatedButton(text="Cerca Iscritti", on_click=self._controller.handle_cercaCorso)
+        self.btn_cercaIscritti = ft.ElevatedButton(text="Cerca Iscritti", on_click=self._controller.handle_cercaIscritti)
 
         row1 = ft.Row([self.dd_corsi, self.btn_cercaIscritti],
                       alignment=ft.MainAxisAlignment.CENTER)
@@ -62,7 +59,7 @@ class View(ft.UserControl):
 
         self.btn_cercaStudente = ft.ElevatedButton(text="Cerca studente", on_click=self._controller.handle_cercaStudente)
         self.btn_cercaCorso = ft.ElevatedButton(text="Cerca corso",
-                                                   on_click=self._controller.handle_cercaCorso)
+                                                   on_click=self._controller.handle_cercaCorsi)
         self.btn_iscriviStudente = ft.ElevatedButton(text="Iscrivi studente",
                                                    on_click=self._controller.handle_IscriviStudente)
         row3=ft.Row([self.btn_cercaStudente,self.btn_cercaCorso,self.btn_iscriviStudente],alignment=ft.MainAxisAlignment.CENTER)
